@@ -1,0 +1,349 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+img.image {
+	max-width: 100%;
+	height: auto;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+body,
+figure,
+article,
+p,
+h1,
+h2,
+h3,
+button,
+img,
+a,
+i,
+article,
+section,
+main,
+footer,
+ul,
+li {
+	margin: 0;
+	border: none;
+	background: none;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Montserrat', helvetica, sans-serif;
+}
+
+h2 {
+	color: white;
+	text-align: center;
+}
+
+/* Ends of Reset */
+
+/*NavBar*/
+
+#btn-menu {
+	display: none;
+}
+
+label {
+	font-size: 50px;
+	position: fixed;
+	left: 20px;
+	top: -10px;
+	transition: 0.5s;
+	cursor: pointer;
+	color: rgb(255, 255, 255);
+}
+.nav {
+	display: flex;
+	justify-content: center;
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+.nav a {
+	padding-left: 20px;
+}
+.nav a:hover {
+	color: blue;
+}
+.nav-links {
+	list-style: none;
+	background: rgb(119, 215, 185);
+	width: 125px;
+	padding-top: 40px;
+	padding-left: 10px;
+	position: fixed;
+	height: 100vh;
+	top: 0;
+	left: -180px;
+	transition: 0.5s;
+	z-index: 2;
+}
+
+.nav-links a:hover {
+	text-decoration: none;
+}
+
+.nav-links a:hover li {
+	color: blue;
+}
+
+.nav-links li {
+	font-size: 1.2em;
+	line-height: 2em;
+	color: #000;
+	margin-top: 20px;
+	text-transform: capitalize;
+	font-family: 'Montserrat', helvetica, sans-serif;
+	text-align: left;
+	cursor: pointer;
+}
+.favCard {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+.info {
+	color: white;
+	font-size: 15px;
+}
+#btn-menu:checked + .navbar ul {
+	left: 0;
+}
+#btn-menu:checked + .navbar label {
+	left: 170px;
+}
+
+/*End of NavBar*/
+
+body {
+	background-color: rgb(172, 172, 172);
+}
+
+.main-container {
+	/* margin: 0 auto; */
+	padding-top: 40px;
+	/* max-width: 1500px; */
+}
+
+.container {
+	padding: 25px;
+}
+.apod {
+	width: 80%;
+}
+/* Card */
+
+.header .date {
+	position: absolute;
+	top: 10px;
+	color: black;
+	background-color: rgb(119, 215, 185);
+	padding: 10px 5px;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.menu-content li {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	font-size: 15px;
+	color: white;
+	text-shadow: blueviolet;
+}
+
+.menu-content button {
+	position: relative;
+	right: 3.5em;
+}
+
+.data {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	color: black;
+	transform: translateY(calc(250px + 8em));
+	transition: transform 0.3s;
+}
+
+.data .content {
+	padding: 1em;
+	font-size: 15px;
+	position: relative;
+	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.61);
+}
+
+.text {
+	margin: 0;
+	padding: 0 10px 10px;
+}
+
+.date {
+	font-size: 20px;
+	color: aliceblue;
+}
+
+.title a {
+	color: black;
+}
+
+.button {
+	display: block;
+	width: 100px;
+	margin: 0.5em auto 0;
+	padding: 10px;
+	text-align: center;
+	font-size: 20px;
+	background-color: blueviolet;
+	color: antiquewhite;
+	line-height: 1;
+	position: relative;
+	font-weight: 700;
+}
+.like {
+	width: 100px;
+	margin-top: 10px;
+}
+.likeCard {
+	margin-top: 10px;
+}
+
+input.search-bar {
+	margin-left: 135px;
+}
+.searchHeader {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.image {
+	width: 350px;
+	margin: 0 auto;
+}
+
+img {
+	height: 400px;
+}
+
+.text-center {
+	height: 70px;
+}
+.container .text {
+	height: 70px;
+}
+
+.card-text {
+	height: 210px;
+}
+
+.content .badge-pill {
+	font-size: 120%;
+	cursor: pointer;
+}
+
+.black {
+	background-color: black;
+	min-height: 98vh;
+}
+
+.About {
+	color: white;
+}
+
+.About img {
+	width: 100px;
+	margin: 0 10vw;
+}
+
+.About h3 {
+	width: 80vw;
+	margin: 0 10vw;
+}
+
+.About-heading {
+	margin-top: 100px;
+	text-align: center;
+}
+.row {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.Favorite {
+	color: white;
+}
+
+.display-message {
+	padding: 25px;
+}
+
+/* form input */
+.form {
+	height: 30px;
+}
+.form-instructions {
+	margin-top: 20px;
+	display: flex;
+	justify-content: center;
+}
+.form-instructions p {
+	margin-right: 20px;
+}
+.search-results {
+	display: flex;
+	flex-direction: column;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.search-image {
+	display: flex;
+	justify-content: center;
+}
+.searchImage {
+	width: 80%;
+}
+.searchPage {
+	width: 100%;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.favHeader {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-around;
+	align-items: center;
+	margin-bottom: 10px;
+}
+.likeCard button {
+	background-color: red;
+}
+@media (max-width: 500px) {
+	.image {
+		width: 80vw;
+	}
+	.search-image {
+		width: 85%;
+	}
+}
+
+.label {
+	text-align: center;
+	background-color: white;
+}
+
+.checkbox {
+	margin: 5px;
+}
+
+.text-center .rate-button {
+	width: 70px;
+	font-size: 100%;
+}
