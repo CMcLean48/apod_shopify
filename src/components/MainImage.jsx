@@ -9,11 +9,9 @@ function MainImage(props) {
 		props.getValue(favorite);
 	}
 	let newId = Date.parse(props.image.date);
-	//var testDateUtc = moment.utc(newId);
-	//	var localDate = moment(testDateUtc);
-	//	var s = (localDate = localDate.format('YYYY-MM-DD'));
+
 	console.log(newId);
-	//	console.log(s);
+
 	return (
 		<div>
 			<div className="searchPage">
@@ -25,8 +23,9 @@ function MainImage(props) {
 							id={newId}
 						/>
 					</div>
-
+					{console.log(props.image)}
 					<h2>{props.image.title}</h2>
+
 					<p className="date">
 						{moment(props.image.date).format('MMM Do, YYYY')}
 					</p>
@@ -35,10 +34,18 @@ function MainImage(props) {
 					<img
 						className="searchImage"
 						src={props.image.hdurl}
-						alt=""
+						alt={props.image.title}
 					/>
 				</div>
 				<p>{props.image.explanation}</p>
+				{
+					//check if copyright
+					props.image.copyright !== undefined ? (
+						<h2>@{props.image.copyright}</h2>
+					) : (
+						<div></div>
+					)
+				}
 			</div>
 		</div>
 	);

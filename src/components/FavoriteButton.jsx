@@ -29,9 +29,15 @@ function FavoriteButton(props) {
 		<li className="likeBtn">
 			<button onClick={() => handleClick()}>
 				{heart ? (
-					<FontAwesomeIcon icon={faHeartSolid} color="white" />
+					<div>
+						unlike
+						<FontAwesomeIcon icon={faHeartSolid} color="white" />
+					</div>
 				) : (
-					<FontAwesomeIcon icon={faHeartRegular} color="white" />
+					<div>
+						like
+						<FontAwesomeIcon icon={faHeartRegular} color="white" />
+					</div>
 				)}
 			</button>
 		</li>

@@ -17,11 +17,10 @@ export function PicData(props) {
 		fetch(`${url}api_key=${key}`)
 			.then((res) => res.json())
 			.then((res) => {
-				console.log(res);
 				setImage(res);
 			});
 	};
-
+	console.log({ image });
 	useEffect(() => {
 		getData();
 	}, [props]);

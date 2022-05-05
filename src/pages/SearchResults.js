@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import Nav from '../components/Nav';
 import SearchForm from '../components/SearchForm';
 import FavoriteButton from '../components/FavoriteButton';
+import MainImage from '../components/MainImage';
 import moment from 'moment';
 
 export function SearchResults(props) {
@@ -67,26 +68,7 @@ export function SearchResults(props) {
 					searchString={searchString}
 				/>
 			</div>
-			<div className="searchPage">
-				<div className="searchHeader">
-					<div className="likeCard">
-						<FavoriteButton
-							className="like"
-							getValue={getFavorites}
-							id={Date.parse(image.date)}
-						/>
-					</div>
-
-					<h2>{image.title}</h2>
-					<p className="date">
-						{moment(image.date).format('MMM Do, YYYY')}
-					</p>
-				</div>
-				<div className="search-image">
-					<img className="searchImage" src={image.hdurl} alt="" />
-				</div>
-				<p>{image.explanation}</p>
-			</div>
+			<MainImage image={image} getValue={getFavorites} />
 		</div>
 	);
 }

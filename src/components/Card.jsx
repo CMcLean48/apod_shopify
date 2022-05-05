@@ -26,8 +26,21 @@ function Card(props) {
 								{moment(image.date).format('MMM Do, YYYY')}
 							</p>
 						</div>
-						<img className="apod" src={image.url} alt="" />
+						<img
+							className="apod"
+							src={image.url}
+							alt={image.title}
+						/>
 						<p className="info">{image.explanation}</p>
+						{console.log(image.copyright)}
+						{
+							//check if copyright
+							image.copyright !== undefined ? (
+								<h2>@{image.copyright}</h2>
+							) : (
+								<div></div>
+							)
+						}
 					</div>
 				))}
 			</div>
