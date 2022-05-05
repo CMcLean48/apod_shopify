@@ -1,7 +1,7 @@
 import React from 'react';
 import FavoriteButton from './FavoriteButton';
 import moment from 'moment';
-//import { useParams } from 'react-router';
+
 import '../styles/App.css';
 function MainImage(props) {
 	// let {id } = useParams();

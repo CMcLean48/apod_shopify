@@ -107,6 +107,7 @@ label {
 	margin-top: 20px;
 	margin-bottom: 50px;
 	width: 400px;
+	border-bottom: 5px solid gray;
 }
 .info {
 	color: white;
@@ -135,7 +136,7 @@ body {
 	padding: 25px;
 }
 .apod {
-	width: 80%;
+	width: 400px;
 }
 /* Card */
 

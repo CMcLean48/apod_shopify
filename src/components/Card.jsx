@@ -1,5 +1,6 @@
 import React from 'react';
 import FavoriteButton from './FavoriteButton';
+import SmartText from './SmartText';
 import moment from 'moment';
 import '../styles/App.css';
 
@@ -31,7 +32,9 @@ function Card(props) {
 							src={image.url}
 							alt={image.title}
 						/>
-						<p className="info">{image.explanation}</p>
+
+						<SmartText text={image.explanation} />
+
 						{console.log(image.copyright)}
 						{
 							//check if copyright
