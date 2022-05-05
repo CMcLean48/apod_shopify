@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons';
 
 function FavoriteButton(props) {
-	const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+	const [favorites, setFavorites] = useState(
+		JSON.parse(localStorage.getItem('favorites')) || []
+	);
 	const [heart, setHeart] = useState(favorites.indexOf(props.id) !== -1);
+	useEffect(() => {
+		setHeart(favorites.indexOf(props.id) !== -1);
+	}, [favorites, props.id]);
 
 	function handleClick() {
 		console.log(props);
 		if (heart) {
 			setHeart(false);
-			props.getValue(props.id);
-			console.log(props.id);
+			props.getValue(-props.id);
+			console.log(-props.id);
 		} else {
 			setHeart(true);
 			props.getValue(props.id);

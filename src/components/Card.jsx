@@ -18,7 +18,7 @@ function Card(props) {
 							<div className="likeCard">
 								<FavoriteButton
 									getValue={getFavorites}
-									id={image.date}
+									id={Date.parse(image.date)}
 								/>
 							</div>
 							<h2 className="title">{image.title}</h2>

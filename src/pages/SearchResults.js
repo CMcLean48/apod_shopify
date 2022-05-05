@@ -19,7 +19,9 @@ export function SearchResults(props) {
 	// add/update state with useState hooks //
 	const [image, setImage] = useState({});
 	const [searchString, setSearch] = useState(todayDate);
-
+	function getFavorites(favorite) {
+		props.getValue(favorite);
+	}
 	const fetchData = () => {
 		fetch(
 			`${searchParams.api}?api_key=${searchParams.key}&${searchParams.endpoint}${searchString}`
@@ -50,9 +52,6 @@ export function SearchResults(props) {
 	//	props.getValue(favorites);
 	//	console.log(favorites);
 	//	}
-	function getFavorites(favorite) {
-		props.getValue(favorite);
-	}
 
 	return (
 		<div>
@@ -74,7 +73,7 @@ export function SearchResults(props) {
 						<FavoriteButton
 							className="like"
 							getValue={getFavorites}
-							id={image.date}
+							id={Date.parse(image.date)}
 						/>
 					</div>
 

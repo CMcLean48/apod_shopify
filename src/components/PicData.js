@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Nav from '../components/Nav';
-import FavoriteButton from './FavoriteButton';
-import moment from 'moment';
+//import FavoriteButton from './FavoriteButton';
+
+//import moment from 'moment';
+//let { id } = useParams();
+//import { useParams } from 'react-router';
 import '../styles/App.css';
+import MainImage from './MainImage';
 
 export function PicData(props) {
 	const [image, setImage] = useState({});
@@ -22,37 +26,17 @@ export function PicData(props) {
 		getData();
 	}, [props]);
 
-	//console.log(image.date);
-
-	function getFavorites(favorites) {
-		props.getValue(favorites);
-		console.log(favorites);
+	function getFavorites(favorite) {
+		props.getValue(favorite);
 	}
+
+	//console.log(image.date);
 
 	return (
 		<div>
 			<Nav />
 			<h2>React Programming with APOD</h2>
-			<div className="searchPage">
-				<div className="searchHeader">
-					<div className="likeCard">
-						<FavoriteButton
-							className="like"
-							getValue={getFavorites}
-							id={image.date}
-						/>
-					</div>
-
-					<h2>{image.title}</h2>
-					<p className="date">
-						{moment(image.date).format('MMM Do, YYYY')}
-					</p>
-				</div>
-				<div className="search-image">
-					<img className="searchImage" src={image.hdurl} alt="" />
-				</div>
-				<p>{image.explanation}</p>
-			</div>
+			<MainImage image={image} getValue={getFavorites} />
 		</div>
 	);
 }

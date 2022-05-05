@@ -13,35 +13,32 @@ function App() {
 		localStorage.setItem('favorites', JSON.stringify(favorites));
 	}, [favorites]);
 
+	// function getFavorites(id) {
+	// 	console.log(id);
+	// 	//	setArrayOfNumbers(nums => nums.includes(number) ? nums.filter(n => n !== number) : [number, ...nums])
+	// 	setFavorites((favorites) =>
+	// 		favorites.includes(id)
+	// 			? favorites.filter((n) => n !== id)
+	// 			: [id, ...favorites]
+	// 	);
+	// }
 	function getFavorites(id) {
-		console.log(id);
-		//	setArrayOfNumbers(nums => nums.includes(number) ? nums.filter(n => n !== number) : [number, ...nums])
-		setFavorites((favorites) =>
-			favorites.includes(id)
-				? favorites.filter((n) => n !== id)
-				: [id, ...favorites]
-		);
-
-		//	if (id != null) {
-		//		console.log('true');
-
-		// if (favorites.indexOf(id) === -1) {
-		// 	setFavorites([...favorites, id]);
-		// } else {
-		// 	var values = favorites.indexOf(id);
-		// 	setFavorites(favorites.splice(values, 1));
-		//}
-		//	setFavorites(favorites.filter((item) => item !== id));
-		// favorites.filter((value) => {
-		// 	console.log(value);
-		// 	console.log(-id);
-		// 	return value !== id;
-		//})
-		//);
-		//	}
-
-		//	}
+		if (id > 0) {
+			if (favorites.indexOf(id) === -1) {
+				setFavorites([...favorites, id]);
+			}
+		} else {
+			setFavorites(
+				favorites.filter((value) => {
+					console.log(value);
+					console.log(-id);
+					console.log(value !== -id);
+					return value !== -id;
+				})
+			);
+		}
 	}
+
 	return (
 		<div>
 			<Router>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from '../components/Card';
 import Nav from '../components/Nav';
+import moment from 'moment';
 function Favourites(props) {
 	const [images, setImages] = useState([]);
 	const key = process.env.REACT_APP_NASA_API_KEY;
@@ -10,12 +11,18 @@ function Favourites(props) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 	function createSavedImagesArray() {
-		props.images.forEach((id) => {
-			console.log(id);
-			getImage(id);
+		props.images.forEach((newId) => {
+			console.log(newId);
+			getImage(newId);
 		});
 	}
-	async function getImage(id) {
+
+	async function getImage(newId) {
+		var testDateUtc = moment.utc(newId);
+		var localDate = moment(testDateUtc);
+		var id = (localDate = localDate.format('YYYY-MM-DD'));
+		//	let id = new Date(newId).toLocaleDateString('en-CA');
+		console.log(id);
 		const data = await fetch(`${url}api_key=${key}&date=${id}`);
 		try {
 			console.log(data);
