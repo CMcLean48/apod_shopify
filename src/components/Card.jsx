@@ -1,6 +1,6 @@
 import React from 'react';
 import FavoriteButton from './FavoriteButton';
-import SmartText from './SmartText';
+import ShowMore from './ShowMore';
 import moment from 'moment';
 import '../styles/App.css';
 
@@ -33,7 +33,7 @@ function Card(props) {
 							alt={image.title}
 						/>
 
-						<SmartText text={image.explanation} />
+						<ShowMore text={image.explanation} />
 
 						{console.log(image.copyright)}
 						{

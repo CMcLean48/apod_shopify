@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-function SmartText({ text, length = 50 }) {
+function ShowMore({ text, length = 50 }) {
 	const [showLess, setShowLess] = useState(true);
 
 	if (text.length < length) {
@@ -7,12 +7,12 @@ function SmartText({ text, length = 50 }) {
 	}
 
 	return (
-		<div>
+		<div className="showExplanation">
 			<p className="info">
 				{showLess ? `${text.slice(0, length)}...` : text}
 			</p>
 			<button
-				style={{ color: 'blue', cursor: 'pointer' }}
+				className="showButton"
 				onClick={() => setShowLess(!showLess)}
 			>
 				&nbsp;View {showLess ? 'More' : 'Less'}
@@ -21,4 +21,4 @@ function SmartText({ text, length = 50 }) {
 	);
 }
 
-export default SmartText;
+export default ShowMore;
